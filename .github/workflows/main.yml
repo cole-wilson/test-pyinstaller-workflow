@@ -67,6 +67,8 @@ jobs:
           draft: false
           prerelease: false
       - run: |
+          ls
+          ls dist
           set -x
           assets=()
           for asset in ./dist/*; do
