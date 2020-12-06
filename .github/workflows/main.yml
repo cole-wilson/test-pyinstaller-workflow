@@ -66,8 +66,6 @@ jobs:
           draft: false
           prerelease: false
       - run: |
-          unzip windows
-          unzip mac
           for asset in ./* do
           assets+=("-a" "$asset")
           done
