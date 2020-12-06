@@ -61,15 +61,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: jhsdadjdgsfff
-          release_name: Release ${{ github.sha }}a
+          tag_name: jhsdadjdgsfffj
+          release_name: Release ${{ github.sha }}aj
           draft: false
           prerelease: false
       - run: |
-          for asset in ./* do
-          assets+=("-a" "$asset")
-          done
-          tag_name="${GITHUB_SHA##*/}"
-          hub release create "${assets[@]}" -m "$tag_name" "$tag_name"
+          hub release edit $(find . -type f -name "*" -printf "-a %p ") -m "" "kjhgfd"
+      #    hub release create "${assets[@]}" -m "$tag_name" "$tag_name"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
